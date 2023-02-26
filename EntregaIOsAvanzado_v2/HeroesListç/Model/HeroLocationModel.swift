@@ -9,6 +9,6 @@
 struct HeroLocationModel: Decodable {
     
     let id: String
-    let latitude: String
-    let longitude: String
+    let latitud: String
+    let longitud: String
 }

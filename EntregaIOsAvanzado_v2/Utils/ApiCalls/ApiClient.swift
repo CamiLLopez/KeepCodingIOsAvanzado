@@ -69,7 +69,6 @@ final class ApiClient {
       completion([], NetworkError.malformedURL)
       return
     }
-    
     var urlComponents = URLComponents()
     urlComponents.queryItems = [URLQueryItem(name: "name", value: "")]
     
@@ -103,19 +102,19 @@ final class ApiClient {
       
   }
     
-   func getHeroLocation(heroId: String , completion: @escaping ([HeroLocationModel], Error?) -> Void) {
-      guard let url = URL(string: "\(ApiClient.api_base_url)/api/heros/locations"), let token = self.token else {
+   func getHeroLocation(with heroId: String , completion: @escaping ([HeroLocationModel], Error?) -> Void) {
+      guard let url = URL(string: "\(ApiClient.api_base_url)/heros/locations"), let token = self.token else {
         completion([], NetworkError.malformedURL)
         return
       }
       
       var urlComponents = URLComponents()
-      urlComponents.queryItems = [URLQueryItem(name: "id", value: heroId)]
+       urlComponents.queryItems = [URLQueryItem(name: "id", value: heroId)]
       
       var urlRequest = URLRequest(url: url)
       urlRequest.httpMethod = "POST"
       urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-      urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+       urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
       
       let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
         guard error == nil else {

@@ -8,15 +8,15 @@
 import Foundation
 import CoreData
 
-@objc(Heroes)
-public class Heroes: NSManagedObject {
+@objc(Hero)
+public class Hero: NSManagedObject {
     
 }
 
-public extension Heroes {
+public extension Hero {
     
-    @nonobjc class func fetchRequest() -> NSFetchRequest<Heroes> {
-        return NSFetchRequest<Heroes>(entityName: "Hero")
+    @nonobjc class func fetchRequest() -> NSFetchRequest<Hero> {
+        return NSFetchRequest<Hero>(entityName: "Hero")
     }
     
     @NSManaged var name: String?

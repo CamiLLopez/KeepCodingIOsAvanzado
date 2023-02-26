@@ -12,8 +12,16 @@ import CoreLocation
 
 class HeroesMapkitViewController: UIViewController {
     
+    var locationManager: CLLocationManager?
+    var mapView: HeroesMapkitView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        
     }
     
     override func loadView() {

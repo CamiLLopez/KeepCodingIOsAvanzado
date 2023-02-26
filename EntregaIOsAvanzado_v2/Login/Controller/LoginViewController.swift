@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+protocol Login {
+    
+    func dismiss()
+    
+    func present(loginViewController: LoginViewController)
+}
+
 
 class LoginViewController: UIViewController {
     
@@ -18,6 +25,20 @@ class LoginViewController: UIViewController {
     var emailTextField: UITextField?
     var messageView: UILabel?
     var login: String?
+    var delegate: Login
+    
+    
+    
+    init(delegate: Login) {
+        self.delegate = delegate
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func loadView() {
         
@@ -49,6 +70,8 @@ class LoginViewController: UIViewController {
             self?.viewModel.saveInKeychain(token: login)
             self?.messageView?.text = "Login exitoso!"
             self?.dismiss(animated: true)
+                
+            self?.delegate.dismiss()
             }
         }
         
@@ -88,6 +111,5 @@ class LoginViewController: UIViewController {
     func logout(){
         
         viewModel.fetchLogout()
-        
     }
 }

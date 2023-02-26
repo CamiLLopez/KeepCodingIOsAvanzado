@@ -16,6 +16,7 @@ class HeroesListTableViewController: UIViewController {
     var viewModel = HeroListTableViewModel()
     var tableViewDelegate: HeroesListTableViewDelegate?
     var logoutButton: UIButton?
+    var loginViewController: LoginViewController?
     
     override func loadView() {
         
@@ -38,17 +39,13 @@ class HeroesListTableViewController: UIViewController {
         
         let tokenResult = validateLogin()
         
-        if let tokenResult{
+        if let tokenResult {
             getHeroes(token: tokenResult)
             setUpUpdateUI()
-            
-        }else {
-            return
-            
         }
         
-       // setUpTableDelegate()
         
+       // setUpTableDelegate()
         
         logoutButton?.addTarget(self, action: #selector(didLogoutTapped), for: .touchUpInside)
     }
@@ -76,10 +73,10 @@ class HeroesListTableViewController: UIViewController {
     
     @objc func didLogoutTapped(sender: UIButton!) {
         
-        let loginViewController = LoginViewController()
+        let loginViewController = LoginViewController(delegate: self)
         loginViewController.logout()
         loginViewController.modalPresentationStyle = .fullScreen
-        self.present(loginViewController, animated: true)
+        self.present(loginViewController: loginViewController)
     }
     
     func validateLogin() -> String? {
@@ -87,22 +84,19 @@ class HeroesListTableViewController: UIViewController {
         let keychainManager = KeychainManager()
         keychainManager.readData()
         
-        let loginViewController = LoginViewController()
+        let loginViewController = LoginViewController(delegate: self)
         
         if keychainManager.tokenValue == nil {
             
-            loginViewController.modalPresentationStyle = .fullScreen
-            
-            self.present(loginViewController, animated: true)
+            self.present(loginViewController: loginViewController)
         }
-    
+        
         return keychainManager.tokenValue
     }
     
     func setUpUpdateUI(){
         
          viewModel.updateUI = { [weak self] heroes in
-             
              let heroe = heroes
              self?.tableViewDataSource?.heroes = heroes
          }
@@ -117,6 +111,22 @@ class HeroesListTableViewController: UIViewController {
              viewModel.fetchData(token: token)
          }
      }
+}
+
+extension HeroesListTableViewController: Login {
+    
+    func dismiss() {
+        self.loginViewController?.dismiss(animated: true)
+        
+        self.mainView.reloadInputViews()
+    }
+    
+    func present(loginViewController: LoginViewController) {
+        
+        loginViewController.modalPresentationStyle = .fullScreen
+        
+        self.present(loginViewController, animated: true)
+    }
     
 }
 
