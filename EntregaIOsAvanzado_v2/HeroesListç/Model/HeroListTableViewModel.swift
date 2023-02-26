@@ -139,6 +139,6 @@ class HeroListTableViewModel: NSObject {
                     debugPrint(error)
                 }
             }
-            self.updateUI?(heroModel) 
+            self.updateUI?(heroModel)
         }
 }
