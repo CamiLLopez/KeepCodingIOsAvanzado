@@ -17,7 +17,6 @@ class LoginViewModel: NSObject {
     let keychain = KeychainManager()
     
     
-    
     override init() {
         
     }

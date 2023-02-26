@@ -13,7 +13,7 @@ class HeroesListTableViewController: UIViewController {
     var mainView: HeroesListView { self.view as! HeroesListView}
     var heroes : [HeroModel] =  []
     var tableViewDataSource: HeroesListTableViewDataSource?
-    var viewModel = HeroListTableViewModel()
+    var viewModel: HeroListTableViewModel?
     var tableViewDelegate: HeroesListTableViewDelegate?
     var logoutButton: UIButton?
     var loginViewController: LoginViewController?
@@ -37,15 +37,15 @@ class HeroesListTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = HeroListTableViewModel()
+        
         let tokenResult = validateLogin()
         
         if let tokenResult {
             getHeroes(token: tokenResult)
             setUpUpdateUI()
         }
-        
-        
-       // setUpTableDelegate()
+        setUpTableDelegate()
         
         logoutButton?.addTarget(self, action: #selector(didLogoutTapped), for: .touchUpInside)
     }
@@ -58,16 +58,11 @@ class HeroesListTableViewController: UIViewController {
                 return
             }
             
-           //Take hero in the hero list according to position index
            let hero = dataSource.heroes[index]
             
-            //Prepare view controller to present detail
+           let heroDetailViewController = HeroDetailViewController(heroeDetailModel: hero)
             
-            //let heroDetailViewController = HeroDetailViewController(heroeDetailModel: hero)
-            
-            //present controller details
-            
-            //self?.present(heroDetailViewController, animated: true)
+           self?.present(heroDetailViewController, animated: true)
         }
     }
     
@@ -96,19 +91,19 @@ class HeroesListTableViewController: UIViewController {
     
     func setUpUpdateUI(){
         
-         viewModel.updateUI = { [weak self] heroes in
-             let heroe = heroes
+         viewModel?.updateUI = { [weak self] heroes in
              self?.tableViewDataSource?.heroes = heroes
          }
      }
      
      private func getHeroes(token: String) -> Void {
     
-        heroes = viewModel.getHeroesFromCoreData()
-         
-         if heroes.isEmpty {
-             debugPrint("heroes esta vacio")
-             viewModel.fetchData(token: token)
+         if let heroes = viewModel?.getHeroesFromCoreData(){
+             
+             if heroes.isEmpty {
+                 debugPrint("heroes esta vacio")
+                 viewModel?.fetchData(token: token)
+             }
          }
      }
 }

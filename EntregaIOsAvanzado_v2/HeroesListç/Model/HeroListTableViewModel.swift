@@ -11,7 +11,6 @@ class HeroListTableViewModel: NSObject {
     
     var updateUI: ((_ heroes: [HeroModel])-> Void)?
     
-    
     let context = AppDelegate.sharedAppDelegate.coreDataManager.managedContext
     let apiClient: ApiClient?
     
@@ -41,10 +40,14 @@ class HeroListTableViewModel: NSObject {
         let heroesFetch: NSFetchRequest<Hero> = Hero.fetchRequest()
         
         do {
+
             let result = try context.fetch(heroesFetch)
+            
             if let heroes = parseHeroModel(heroDB: result) {
-                self.updateUI?(heroes)
-                return heroes
+                DispatchQueue.main.async {
+                    self.updateUI?(heroes)
+                }
+               return heroes
             }else{
                 debugPrint("Se produjo un error")
             }
@@ -111,13 +114,7 @@ class HeroListTableViewModel: NSObject {
             
             debugPrint(hero)
             heroModelParsed.append(heroModel)
-            
-           /* guard let heroToModel = try? HeroModel(from: heroParse as! Decoder) else{
-                debugPrint("Was a problem with the decoder")
-                return heroModelParsed
-            }*/
         }
-        
         return heroModelParsed
     }
         
@@ -137,12 +134,11 @@ class HeroListTableViewModel: NSObject {
                 
                 do {
                     try context.save()
-                    self.updateUI?(heroModel)
                     
                 } catch let error {
                     debugPrint(error)
                 }
             }
-            
+            self.updateUI?(heroModel) 
         }
 }

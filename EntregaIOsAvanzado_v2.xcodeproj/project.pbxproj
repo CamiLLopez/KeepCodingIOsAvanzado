@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF0446DD29AB78160018E588 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446DC29AB78160018E588 /* HeroDetailViewController.swift */; };
+		DF0446DF29AB78520018E588 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446DE29AB78520018E588 /* HeroDetailView.swift */; };
 		DFDEE97B29A693B900F0CB53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97A29A693B900F0CB53 /* AppDelegate.swift */; };
 		DFDEE97D29A693B900F0CB53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97C29A693B900F0CB53 /* SceneDelegate.swift */; };
 		DFDEE97F29A693B900F0CB53 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97E29A693B900F0CB53 /* HomeTabBarViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF0446DC29AB78160018E588 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		DF0446DE29AB78520018E588 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		DFDEE97729A693B900F0CB53 /* EntregaIOsAvanzado_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntregaIOsAvanzado_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDEE97A29A693B900F0CB53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDEE97C29A693B900F0CB53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,7 +186,6 @@
 		DFDEE99529A694BC00F0CB53 /* HeroeDetail */ = {
 			isa = PBXGroup;
 			children = (
-				DFDEE99F29A695DC00F0CB53 /* Model */,
 				DFDEE99E29A695D700F0CB53 /* View */,
 				DFDEE99D29A695CE00F0CB53 /* Controller */,
 			);
@@ -226,6 +229,7 @@
 		DFDEE99D29A695CE00F0CB53 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DF0446DC29AB78160018E588 /* HeroDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,15 +237,9 @@
 		DFDEE99E29A695D700F0CB53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF0446DE29AB78520018E588 /* HeroDetailView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		DFDEE99F29A695DC00F0CB53 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		DFDEE9A029A695E200F0CB53 /* Controller */ = {
@@ -405,7 +403,9 @@
 				DFDEE9B029A6970D00F0CB53 /* HeroesMapkitViewController.swift in Sources */,
 				DFDEE9D229AA679D00F0CB53 /* HeroParseModel.swift in Sources */,
 				DFDEE97B29A693B900F0CB53 /* AppDelegate.swift in Sources */,
+				DF0446DD29AB78160018E588 /* HeroDetailViewController.swift in Sources */,
 				DFDEE9B529A6976000F0CB53 /* HeroesListTableViewDataSource.swift in Sources */,
+				DF0446DF29AB78520018E588 /* HeroDetailView.swift in Sources */,
 				DFDEE9CA29A7F7CF00F0CB53 /* Heroes+CoreDataClass.swift in Sources */,
 				DFDEE9C129A6983400F0CB53 /* LoginViewModel.swift in Sources */,
 				DFDEE9B929A697BD00F0CB53 /* HeroesListView.swift in Sources */,
