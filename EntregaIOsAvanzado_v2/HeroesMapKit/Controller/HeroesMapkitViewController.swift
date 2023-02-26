@@ -11,7 +11,7 @@ import CoreLocation
 class HeroesMapkitViewController: UIViewController {
     
     var locationManager: CLLocationManager?
-    var mapView: HeroesMapkitView?
+    var mapView: HeroesMapkitView {self.view as! HeroesMapkitView}
     var viewModel: HeroMapKitModel?
     let initialLatitude: Double = 0.0
     let initialLongitude: Double = 0.0
@@ -25,8 +25,9 @@ class HeroesMapkitViewController: UIViewController {
         locationManager?.requestWhenInUseAuthorization()
         locationManager?.delegate = self
         
-        mapView?.delegate = self
-        mapView?.register(AnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.map.delegate = self
+        
+        mapView.map.register(CustomMarker.self,forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
         moveToCoordinates(initialLatitude, initialLongitude)
         
@@ -35,7 +36,7 @@ class HeroesMapkitViewController: UIViewController {
                 Annotation(place: $0)
             }
             
-            mapView?.showAnnotations(annotation, animated: true)
+            mapView.map.showAnnotations(annotation, animated: true)
 
         }
     }
@@ -53,21 +54,19 @@ class HeroesMapkitViewController: UIViewController {
         
         let region = MKCoordinateRegion(center: center, span: span)
         
-        mapView?.setRegion(region, animated: true)
+        mapView.map.setRegion(region, animated: true)
     }
 }
 
 extension HeroesMapkitViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        debugPrint("hola annotation \(annotation)")
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let id = MKMapViewDefaultAnnotationViewReuseIdentifier
         
-        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id)
+      let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: id)
         
-        if let annotation = annotation as? Annotation{
+        if let annotation = annotation as? Annotation {
             annotationView?.canShowCallout = true
             annotationView?.detailCalloutAccessoryView = CallOut(annotation: annotation)
             
@@ -76,7 +75,6 @@ extension HeroesMapkitViewController: MKMapViewDelegate {
         
         return nil
     }
-    
 }
 extension HeroesMapkitViewController: CLLocationManagerDelegate{
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

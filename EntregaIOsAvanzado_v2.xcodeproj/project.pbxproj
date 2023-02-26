@@ -11,9 +11,9 @@
 		DF0446DF29AB78520018E588 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446DE29AB78520018E588 /* HeroDetailView.swift */; };
 		DF0446E129AB893E0018E588 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E029AB893E0018E588 /* PlaceModel.swift */; };
 		DF0446E329AB896B0018E588 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E229AB896B0018E588 /* Annotation.swift */; };
-		DF0446E529AB89B20018E588 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E429AB89B20018E588 /* AnnotationView.swift */; };
 		DF0446E729AB89FE0018E588 /* CallOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E629AB89FE0018E588 /* CallOut.swift */; };
 		DF0446EB29AB9AD40018E588 /* HeroMapKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446EA29AB9AD40018E588 /* HeroMapKitModel.swift */; };
+		DF0446ED29ABDDDD0018E588 /* CustomMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446EC29ABDDDD0018E588 /* CustomMarker.swift */; };
 		DFDEE97B29A693B900F0CB53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97A29A693B900F0CB53 /* AppDelegate.swift */; };
 		DFDEE97D29A693B900F0CB53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97C29A693B900F0CB53 /* SceneDelegate.swift */; };
 		DFDEE97F29A693B900F0CB53 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97E29A693B900F0CB53 /* HomeTabBarViewController.swift */; };
@@ -46,9 +46,9 @@
 		DF0446DE29AB78520018E588 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
 		DF0446E029AB893E0018E588 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		DF0446E229AB896B0018E588 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
-		DF0446E429AB89B20018E588 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
 		DF0446E629AB89FE0018E588 /* CallOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOut.swift; sourceTree = "<group>"; };
 		DF0446EA29AB9AD40018E588 /* HeroMapKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapKitModel.swift; sourceTree = "<group>"; };
+		DF0446EC29ABDDDD0018E588 /* CustomMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarker.swift; sourceTree = "<group>"; };
 		DFDEE97729A693B900F0CB53 /* EntregaIOsAvanzado_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntregaIOsAvanzado_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDEE97A29A693B900F0CB53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDEE97C29A693B900F0CB53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -291,8 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				DFDEE9AD29A696D700F0CB53 /* HeroesMapkitView.swift */,
-				DF0446E429AB89B20018E588 /* AnnotationView.swift */,
 				DF0446E629AB89FE0018E588 /* CallOut.swift */,
+				DF0446EC29ABDDDD0018E588 /* CustomMarker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,9 +407,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0446E729AB89FE0018E588 /* CallOut.swift in Sources */,
+				DF0446ED29ABDDDD0018E588 /* CustomMarker.swift in Sources */,
 				DF0446EB29AB9AD40018E588 /* HeroMapKitModel.swift in Sources */,
 				DFDEE9AE29A696D700F0CB53 /* HeroesMapkitView.swift in Sources */,
-				DF0446E529AB89B20018E588 /* AnnotationView.swift in Sources */,
 				DFDEE9BF29A6981000F0CB53 /* HeroListTableViewModel.swift in Sources */,
 				DFDEE9BD29A697F000F0CB53 /* HeroModel.swift in Sources */,
 				DFDEE9D029AA414900F0CB53 /* HeroLocationModel.swift in Sources */,

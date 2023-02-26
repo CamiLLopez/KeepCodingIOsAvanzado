@@ -111,9 +111,9 @@ class HeroesListTableViewController: UIViewController {
 extension HeroesListTableViewController: Login {
     
     func dismiss() {
+        
         self.loginViewController?.dismiss(animated: true)
         
-        self.mainView.reloadInputViews()
     }
     
     func present(loginViewController: LoginViewController) {

@@ -11,9 +11,9 @@ import UIKit
 import MapKit
 
 
-class HeroesMapkitView: MKMapView {
+class HeroesMapkitView: UIView {
     
-    let mapView: MKMapView = {
+    let map: MKMapView = {
         let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.overrideUserInterfaceStyle = .light
@@ -35,14 +35,14 @@ class HeroesMapkitView: MKMapView {
     
     func setUpViews(){
         
-        addSubview(mapView)
+        addSubview(map)
         
         NSLayoutConstraint.activate([
         
-            mapView.topAnchor.constraint(equalTo: topAnchor),
-            mapView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            mapView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            mapView.trailingAnchor.constraint(equalTo: trailingAnchor)
+            map.topAnchor.constraint(equalTo: topAnchor),
+            map.bottomAnchor.constraint(equalTo: bottomAnchor),
+            map.leadingAnchor.constraint(equalTo: leadingAnchor),
+            map.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }

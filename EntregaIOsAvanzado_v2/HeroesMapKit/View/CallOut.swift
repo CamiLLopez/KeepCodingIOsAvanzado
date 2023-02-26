@@ -46,7 +46,7 @@ class CallOut: UIView {
     private func setupSubtitle() {
             subtitleLabel.font = UIFont.systemFont(ofSize: 14)
             subtitleLabel.textColor = .gray
-            subtitleLabel.text = "subtitle"
+            subtitleLabel.text = "Ver detalles"
             addSubview(subtitleLabel)
             subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
             subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
