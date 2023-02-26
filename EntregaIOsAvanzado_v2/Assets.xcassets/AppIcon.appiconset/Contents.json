@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "dragon-ball-z.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

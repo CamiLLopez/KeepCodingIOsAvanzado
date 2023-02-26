@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		DF0446DD29AB78160018E588 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446DC29AB78160018E588 /* HeroDetailViewController.swift */; };
 		DF0446DF29AB78520018E588 /* HeroDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446DE29AB78520018E588 /* HeroDetailView.swift */; };
+		DF0446E129AB893E0018E588 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E029AB893E0018E588 /* PlaceModel.swift */; };
+		DF0446E329AB896B0018E588 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E229AB896B0018E588 /* Annotation.swift */; };
+		DF0446E529AB89B20018E588 /* AnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E429AB89B20018E588 /* AnnotationView.swift */; };
+		DF0446E729AB89FE0018E588 /* CallOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446E629AB89FE0018E588 /* CallOut.swift */; };
+		DF0446EB29AB9AD40018E588 /* HeroMapKitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0446EA29AB9AD40018E588 /* HeroMapKitModel.swift */; };
 		DFDEE97B29A693B900F0CB53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97A29A693B900F0CB53 /* AppDelegate.swift */; };
 		DFDEE97D29A693B900F0CB53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97C29A693B900F0CB53 /* SceneDelegate.swift */; };
 		DFDEE97F29A693B900F0CB53 /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE97E29A693B900F0CB53 /* HomeTabBarViewController.swift */; };
@@ -34,12 +39,16 @@
 		DFDEE9CA29A7F7CF00F0CB53 /* Heroes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE9C929A7F7CF00F0CB53 /* Heroes+CoreDataClass.swift */; };
 		DFDEE9CC29A7F91500F0CB53 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE9CB29A7F91500F0CB53 /* CoreDataManager.swift */; };
 		DFDEE9D029AA414900F0CB53 /* HeroLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE9CF29AA414900F0CB53 /* HeroLocationModel.swift */; };
-		DFDEE9D229AA679D00F0CB53 /* HeroParseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDEE9D129AA679D00F0CB53 /* HeroParseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DF0446DC29AB78160018E588 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		DF0446DE29AB78520018E588 /* HeroDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailView.swift; sourceTree = "<group>"; };
+		DF0446E029AB893E0018E588 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		DF0446E229AB896B0018E588 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		DF0446E429AB89B20018E588 /* AnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationView.swift; sourceTree = "<group>"; };
+		DF0446E629AB89FE0018E588 /* CallOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallOut.swift; sourceTree = "<group>"; };
+		DF0446EA29AB9AD40018E588 /* HeroMapKitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMapKitModel.swift; sourceTree = "<group>"; };
 		DFDEE97729A693B900F0CB53 /* EntregaIOsAvanzado_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntregaIOsAvanzado_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDEE97A29A693B900F0CB53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDEE97C29A693B900F0CB53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +75,6 @@
 		DFDEE9C929A7F7CF00F0CB53 /* Heroes+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Heroes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DFDEE9CB29A7F91500F0CB53 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DFDEE9CF29AA414900F0CB53 /* HeroLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocationModel.swift; sourceTree = "<group>"; };
-		DFDEE9D129AA679D00F0CB53 /* HeroParseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroParseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +275,6 @@
 				DFDEE9BC29A697F000F0CB53 /* HeroModel.swift */,
 				DFDEE9BE29A6981000F0CB53 /* HeroListTableViewModel.swift */,
 				DFDEE9CF29AA414900F0CB53 /* HeroLocationModel.swift */,
-				DFDEE9D129AA679D00F0CB53 /* HeroParseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,6 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				DFDEE9AD29A696D700F0CB53 /* HeroesMapkitView.swift */,
+				DF0446E429AB89B20018E588 /* AnnotationView.swift */,
+				DF0446E629AB89FE0018E588 /* CallOut.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +300,9 @@
 		DFDEE9A529A695FD00F0CB53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF0446E029AB893E0018E588 /* PlaceModel.swift */,
+				DF0446E229AB896B0018E588 /* Annotation.swift */,
+				DF0446EA29AB9AD40018E588 /* HeroMapKitModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -394,14 +406,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0446E729AB89FE0018E588 /* CallOut.swift in Sources */,
+				DF0446EB29AB9AD40018E588 /* HeroMapKitModel.swift in Sources */,
 				DFDEE9AE29A696D700F0CB53 /* HeroesMapkitView.swift in Sources */,
+				DF0446E529AB89B20018E588 /* AnnotationView.swift in Sources */,
 				DFDEE9BF29A6981000F0CB53 /* HeroListTableViewModel.swift in Sources */,
 				DFDEE9BD29A697F000F0CB53 /* HeroModel.swift in Sources */,
 				DFDEE9D029AA414900F0CB53 /* HeroLocationModel.swift in Sources */,
+				DF0446E329AB896B0018E588 /* Annotation.swift in Sources */,
 				DFDEE97F29A693B900F0CB53 /* HomeTabBarViewController.swift in Sources */,
 				DFDEE9B729A6977900F0CB53 /* HeroesListTableViewDelegate.swift in Sources */,
 				DFDEE9B029A6970D00F0CB53 /* HeroesMapkitViewController.swift in Sources */,
-				DFDEE9D229AA679D00F0CB53 /* HeroParseModel.swift in Sources */,
 				DFDEE97B29A693B900F0CB53 /* AppDelegate.swift in Sources */,
 				DF0446DD29AB78160018E588 /* HeroDetailViewController.swift in Sources */,
 				DFDEE9B529A6976000F0CB53 /* HeroesListTableViewDataSource.swift in Sources */,
@@ -411,6 +426,7 @@
 				DFDEE9B929A697BD00F0CB53 /* HeroesListView.swift in Sources */,
 				DFDEE97D29A693B900F0CB53 /* SceneDelegate.swift in Sources */,
 				DFDEE9C829A7F6DF00F0CB53 /* Heroes.xcdatamodeld in Sources */,
+				DF0446E129AB893E0018E588 /* PlaceModel.swift in Sources */,
 				DFDEE9AA29A6965D00F0CB53 /* KeychainManager.swift in Sources */,
 				DFDEE9AC29A6967B00F0CB53 /* ApiClient.swift in Sources */,
 				DFDEE9C529A6987B00F0CB53 /* LoginViewController.swift in Sources */,

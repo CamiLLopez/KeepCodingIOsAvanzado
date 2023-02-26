@@ -11,12 +11,14 @@ import UIKit
 import MapKit
 
 
-class HeroesMapkitView: UIView {
+class HeroesMapkitView: MKMapView {
     
     let mapView: MKMapView = {
         let map = MKMapView()
         map.translatesAutoresizingMaskIntoConstraints = false
         map.overrideUserInterfaceStyle = .light
+        map.showsUserLocation = true
+        map.mapType = .standard
                 
         return map
     }()

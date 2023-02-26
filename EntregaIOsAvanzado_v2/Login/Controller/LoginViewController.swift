@@ -50,7 +50,6 @@ class LoginViewController: UIViewController {
         messageView = loginView.getMessageView()
                 
         view = loginView
-        
     }
     
     override func viewDidLoad() {
@@ -74,17 +73,6 @@ class LoginViewController: UIViewController {
             self?.delegate.dismiss()
             }
         }
-        
-        //TODO Show alert con error
-        /*viewModel?.updateError = { [weak self] error in
-            
-            DispatchQueue.main.async {
-            var dialogMessage = UIAlertController(title: "Attention", message: "I am an alert message you cannot dissmiss.", preferredStyle: .alert)
-                
-                self?.present(dialogMessage, animated: true)
-            
-            }
-        }*/
     }
     
     func getLogin(email: String, password: String){

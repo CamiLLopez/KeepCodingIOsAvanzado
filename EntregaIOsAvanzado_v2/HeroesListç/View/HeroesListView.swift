@@ -17,7 +17,8 @@ class HeroesListView: UIView {
         label.text = "Dragon Ball Heroes"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
-        label.backgroundColor = .systemRed
+        label.backgroundColor = .systemGray
+        label.textColor = .systemOrange
         
         return label
     }()
@@ -26,9 +27,10 @@ class HeroesListView: UIView {
         
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .cyan
+        button.backgroundColor = .systemRed
         button.setTitle("Logout", for: .normal)
         button.contentVerticalAlignment = .center
+
         return button
         
     }()
@@ -69,7 +71,7 @@ class HeroesListView: UIView {
             headerLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
             
-            logoutButton.topAnchor.constraint(equalTo: topAnchor, constant: 100),
+            logoutButton.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 5),
             logoutButton.leadingAnchor.constraint(equalTo: headerLabel.leadingAnchor, constant: 280),
             logoutButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4),
             logoutButton.heightAnchor.constraint(equalToConstant: 20),

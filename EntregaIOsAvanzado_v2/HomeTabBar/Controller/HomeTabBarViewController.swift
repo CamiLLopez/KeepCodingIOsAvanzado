@@ -36,6 +36,6 @@ class HomeTabBarViewController: UITabBarController {
     
     private func setupLayout() {
         
-        tabBar.backgroundColor = .systemCyan
+        tabBar.backgroundColor = .white
     }
 }
