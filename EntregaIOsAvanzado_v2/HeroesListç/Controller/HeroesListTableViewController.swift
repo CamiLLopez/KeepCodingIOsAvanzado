@@ -104,14 +104,16 @@ class HeroesListTableViewController: UIViewController {
                  debugPrint("heroes esta vacio")
                  viewModel?.fetchData(token: token)
              }
+          self.tableViewDataSource?.heroes = heroes
          }
      }
 }
 
 extension HeroesListTableViewController: Login {
     
-    func dismiss() {
+    func dismiss(token: String) {
         
+        self.getHeroes(token: token)
         self.loginViewController?.dismiss(animated: true)
         
     }

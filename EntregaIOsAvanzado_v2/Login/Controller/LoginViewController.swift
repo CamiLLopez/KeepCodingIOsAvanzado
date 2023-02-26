@@ -10,7 +10,7 @@ import UIKit
 
 protocol Login {
     
-    func dismiss()
+    func dismiss(token: String)
     
     func present(loginViewController: LoginViewController)
 }
@@ -67,10 +67,8 @@ class LoginViewController: UIViewController {
             self?.login = login
             debugPrint(login)
             self?.viewModel.saveInKeychain(token: login)
-            self?.messageView?.text = "Login exitoso!"
+            self?.delegate.dismiss(token: login)
             self?.dismiss(animated: true)
-                
-            self?.delegate.dismiss()
             }
         }
     }
